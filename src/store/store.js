@@ -12,6 +12,24 @@ import layer3 from "../images/layer3.png";
 import layer4 from "../images/layer4.png";
 import layer5 from "../images/layer5.png";
 import serviceThme from "../images/service-thme.png";
+import zeepin from "../images/zeepin.png";
+import zeepinChart from "../images/zeepin-chart.png";
+import diamond from "../images/diamond.png";
+import diamondChart from "../images/diamond-chart.png";
+import sophia from "../images/sophia.png";
+import sophiaChart from "../images/sophia-chart.png";
+import blue from "../images/blue.png";
+import blueChart from "../images/blue-chart.png";
+import sib from "../images/sib.png";
+import sibChart from "../images/sib-d.png";
+import stox from "../images/stox.png";
+import stoxChart from "../images/stox-d.png";
+import book from "../images/book.png";
+import bookChart from "../images/book-d.png";
+import myriad from "../images/myriad.png";
+import myriadChart from "../images/myriad-d.png";
+
+
 let store = {
     meetPage: {
         info: [
@@ -75,7 +93,7 @@ let store = {
     },
     servicePage: {
         services: [
-            {id: 1, service: 'Проведение IEO', photo: layer1, subtheme: serviceThme},
+            {id: 1, service: 'Проведение IEO', photo: layer1, subtheme: serviceThme, text: "some text"},
             {id: 2, service: 'Проведение ICO', photo: layer2},
             {id: 3, service: 'Добавление проектов на биржи.', photo: layer3},
             {id: 4, service: 'Маркет-мейкинг и создание торговых ботов.', photo: layer4},
@@ -84,6 +102,18 @@ let store = {
             {id: 7, service: 'Подбор партнера на доверительное управление.', photo: layer1},
             {id: 8, service: 'Внебиржевые OTC-сделки и анонимное инвестирование.', photo: layer1},
             {id: 9, service: 'Имущественные сделки за криптовалюту.', photo: layer1},
+        ]
+    },
+    projectPage: {
+        projects: [
+            {id: 1, project: "Zeepin", tag:'(ZPD)', price: 'max $ 0,016431', logo: zeepin, chart:zeepinChart},
+            {id: 2, project: "Dimond", tag:'(DMD)', price: 'max $ 34,16', logo: diamond, chart:diamondChart},
+            {id: 3, project: "SophiaTX", tag:'(SPHTX)', price: 'max $ 1,396431', logo: sophia, chart:sophiaChart},
+            {id: 4, project: "Blue Protocol", tag:'', price: 'max $ 1,966431', logo: blue, chart:blueChart},
+            {id: 5, project: "SibCoin", tag:'(SIB)', price: 'max $ 5,206431', logo: sib , chart:sibChart},
+            {id: 6, project: "Stox", tag:'(STX)', price: 'max $ 2,606431', logo: stox, chart:stoxChart},
+            {id: 7, project: "Myriad", tag:'(XMY)', price: 'max $ 0,046431', logo: myriad, chart:myriadChart},
+            {id: 8, project: "LBRY Credits", tag:'', price: 'max $ 1,236431', logo: book, chart:bookChart},
         ]
     },
     getState() {

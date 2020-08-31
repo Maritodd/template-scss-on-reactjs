@@ -62,8 +62,10 @@
   .projects {
     grid-template-columns: 1fr 3fr 3fr 1fr;
     &-ready {
-      grid-template-columns: 1fr 1fr;
-      grid-row-gap: 25px;
+      grid-row-gap: 10px;
+      &__block {
+        width: 95%;
+      }
     }
   }
   .partner {
@@ -97,6 +99,27 @@
 
     &-text {
       grid-template-columns: 4fr 2fr;
+    }
+  }
+  .projects {
+    &-ready {
+      &__block {
+        width: 95%;
+        &_img {
+          width: 30px;
+        }
+        &_title {
+          &--name {
+            font-size: 14px;
+            .tag {
+              font-size: 13px;
+            }
+          }
+          &--price {
+            font-size: 12px;
+          }
+        }
+      }
     }
   }
   .partner {

@@ -13,16 +13,21 @@ $color-text: #fff;
 $color-service: #080e48;
 $color-logo: #faf5f5;
 
-%template-blueBox{
-  padding: 2px 15px;
+%template-blueBox {
+  padding: 12px;
+  height: 15px;
   position: absolute;
-  top: 0;
-  right: 0;
-  background-color: transparent;
+  top: 0px;
+  right: 17px;
   border-top-right-radius: 5px;
   color: #FFF;
   cursor: pointer;
-  transition: all .5s;
+  transition: all .3s;
+
+  & p {
+    position: relative;
+    bottom: 20px;
+  }
 }
 
 %template-inputs {
@@ -99,6 +104,7 @@ $color-logo: #faf5f5;
       font-weight: 400;
       letter-spacing: 0.25px;
       text-decoration: none;
+
       &:hover {
         color: $color-hover;
         border-bottom: 3px solid #1c30fa;
@@ -129,6 +135,7 @@ $color-logo: #faf5f5;
     grid-column: 4/5;
     justify-self: start;
     align-self: center;
+
     &__world {
       position: relative;
 
@@ -275,7 +282,7 @@ $color-logo: #faf5f5;
 .service {
   display: grid;
   grid-template-columns: 1fr 1fr 2.5fr 2fr;
-  grid-template-rows: .3fr 3fr 3fr;
+  grid-template-rows: .7fr 1.5fr 2fr;
   min-height: 956px;
   background-color: $color-hover;
   background-image: linear-gradient(to right, #eeeff9 0%, #ffffff 100%);
@@ -308,6 +315,7 @@ $color-logo: #faf5f5;
     color: $color-hover;
     cursor: pointer;
     transition: .3s;
+    z-index: 12;
 
     &:hover {
       transition: .3s;
@@ -320,12 +328,12 @@ $color-logo: #faf5f5;
     margin-left: -5px;
   }
 
-
   &-allow {
-    //display: flex;
-    //grid-column: 1/7;
-    //grid-column-gap: 20px;
-    //align-self: center;
+    display: grid;
+    grid-template-columns: 12fr;
+    grid-column: 1/7;
+    align-self: center;
+    user-select: none;
 
     &__item {
       position: relative;
@@ -358,6 +366,7 @@ $color-logo: #faf5f5;
 
       &_open {
         @extend %template-blueBox;
+
       }
 
       &:hover .service-allow__item_container {
@@ -378,6 +387,7 @@ $color-logo: #faf5f5;
   &-desc {
     grid-area: service-desc;
     grid-column: 2/5;
+    grid-row: 3/4;
     z-index: 1;
   }
 
@@ -403,6 +413,7 @@ $color-logo: #faf5f5;
     grid-area: service-theme;
     align-self: center;
     grid-column: 3/5;
+    grid-row: 3/4;
     justify-self: center;
     z-index: 0;
   }
@@ -419,6 +430,7 @@ $color-logo: #faf5f5;
     justify-self: center;
     align-self: center;
     width: 50%;
+
     & video {
       width: 75%;
     }
@@ -525,14 +537,14 @@ $color-logo: #faf5f5;
 
   &-ready {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-column: 2/4;
-    grid-column-gap: 25px;
+    grid-template-columns: 12fr;
+    grid-template-rows: 2fr;
+    grid-column: 1/7;
 
     &__block {
-      height: 226px;
-      width: 300px;
+      user-select: none;
+      height: 210px;
+      width: 280px;
       border: 1px solid rgba(8, 14, 72, 0.33);
       background-color: $color-text;
       display: grid;
@@ -541,10 +553,19 @@ $color-logo: #faf5f5;
       justify-items: center;
       align-items: center;
       cursor: pointer;
+      transition: all .3s;
 
       &:hover {
         border: none;
-        box-shadow: 0 40px 49px rgba(8, 14, 72, 0.15);
+        box-shadow: 0 15px 34px rgba(8, 14, 72, 0.15);
+      }
+
+      &_img {
+        width: 40%;
+      }
+
+      &_chart {
+        width: 70%;
       }
 
       &_title {
@@ -602,6 +623,7 @@ $color-logo: #faf5f5;
       font-weight: 700;
     }
   }
+
   &-blocks {
     display: flex;
     justify-items: start;
@@ -610,14 +632,17 @@ $color-logo: #faf5f5;
     flex-wrap: wrap;
 
   }
+
   &-block {
     margin-top: 30px;
     margin-right: 80px;
     align-items: center;
+
     &__item {
       filter: grayscale(1);
       opacity: 0.8;
       transition: all .5s;
+
       &:hover {
         filter: none;
         transition: all .3s;
@@ -663,27 +688,32 @@ $color-logo: #faf5f5;
       box-shadow: 0 11px 16px rgba(8, 14, 72, 0.1);
       background-color: #ffffff;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: .6fr 1fr;
       cursor: pointer;
       border-radius: 5px;
+
       &_open {
         @extend %template-blueBox;
+        right: 0;
       }
+
       &:hover {
         box-shadow: 0 40px 49px rgba(8, 14, 72, 0.15);
       }
-      &:hover .meet-block__item_open{
-       background-color: #1c30fa;
+
+      &:hover .meet-block__item_open {
+        background-color: #1c30fa;
       }
 
       &_desc {
         justify-content: start;
         display: grid;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: .2fr .1fr;
       }
     }
 
     &__name {
+      width: 60%;
       grid-column: 2/3;
       align-self: start;
       color: $color-service;
@@ -693,6 +723,7 @@ $color-logo: #faf5f5;
     }
 
     &__status {
+      width: 85%;
       grid-column: 2/3;
       align-self: end;
       opacity: 0.4;
@@ -768,14 +799,17 @@ $color-logo: #faf5f5;
         display: grid;
         grid-template-columns: .2fr 1fr .1fr;
         grid-template-rows: 1fr;
+
         &--arrow {
           color: #1c30fa;
           align-self: center;
         }
+
         &--img {
           align-self: center;
           margin-right: 10px;
         }
+
         &--text {
           text-decoration: underline;
           align-self: center;
@@ -855,35 +889,38 @@ $color-logo: #faf5f5;
 
       &_checkbox {
         display: grid;
-        grid-template-columns: 1.5fr 1.5fr 1fr;
-        justify-items: center;
-        grid-column-gap: 5px;
+        grid-template-columns: 1.5fr 1.4fr 1fr;
+        grid-column-gap: 1px;
         align-items: center;
+        justify-items: start;
 
         .label {
-          box-shadow: 0 9px 21px rgba(41, 9, 103, 0.1);
-          padding: 8px 11px;
-          border-radius: 6px;
+          cursor: pointer;
 
           .label-check {
             display: none;
-
-            &:checked + span {
-              border-radius: 6px;
-              border: 1px solid #aeb0c3;
-            }
 
             &__img {
               margin: 0px 5px -4px 0px;
             }
 
             &__text {
+              box-shadow: 0 5px 12px rgba(8, 14, 72, .15);
+              padding: 5px 10px;
+              border-radius: 6px;
               color: $color-service;
               font-family: $font-fam;
               font-size: 16px;
               font-weight: 400;
+              transition: all .2s;
             }
           }
+        }
+
+        .label input:checked + span {
+          border-radius: 6px;
+          border: 1px solid #aeb0c3;
+          box-shadow: none;
         }
       }
     }
@@ -906,6 +943,7 @@ $color-logo: #faf5f5;
     position: absolute;
     z-index: -1;
     width: 50%;
+
     &__img {
       width: 100%;
     }
@@ -941,6 +979,7 @@ $color-logo: #faf5f5;
     grid-template-columns: .5fr 2.5fr;
     width: 100%;
     padding: 60px 50px;
+
     &__img {
       width: 100%;
       align-self: center;
@@ -957,12 +996,14 @@ $color-logo: #faf5f5;
         font-family: $font-fam;
         color: #000000;
       }
+
       &_status {
         font-size: 14px;
         font-family: $font-fam;
         opacity: 0.4;
         color: $color-service;
       }
+
       &_exp {
         width: 90%;
         font-size: 13px;
@@ -971,10 +1012,12 @@ $color-logo: #faf5f5;
       }
     }
   }
+
   &-faq {
     height: 500px;
     padding-top: 35px;
     overflow-y: scroll;
+
     &__company {
       height: max-content;
       width: 100%;
@@ -1000,34 +1043,29 @@ $color-logo: #faf5f5;
     outline: none;
     text-align: center;
     transition: all .2s ease-in;
-    box-shadow: 0 17px 27px 0 rgba(28,48,250,.18);
+    box-shadow: 0 17px 27px 0 rgba(28, 48, 250, .18);
 
     &:before {
-    color: #1c30fa;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    font-size: 25px;
-    line-height: 35px;
-    position: absolute;
-    display: block;
-    width: 35px;
-    content: "\00d7";
-    text-align: center;
+      color: #1c30fa;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      font-size: 25px;
+      line-height: 35px;
+      position: absolute;
+      display: block;
+      width: 35px;
+      content: "\00d7";
+      text-align: center;
       z-index: 1;
-  }
+    }
+
     &:hover {
-      box-shadow: 0 5px 10px 0 rgba(28,48,250,.18);
+      box-shadow: 0 5px 10px 0 rgba(28, 48, 250, .18);
     }
   }
 }
-
-.slider {
-
-
-}
-
 
 
 @import 'media.scss';

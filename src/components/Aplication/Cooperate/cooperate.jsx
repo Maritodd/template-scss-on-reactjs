@@ -23,16 +23,19 @@ const Cooperate = () => {
                     </select>
                     <div className="cooperate-connection__form_checkbox">
                         <label className="label">
-                            <input className="label-check" type="checkbox"/><span className="label-check__text"><img
-                            className="label-check__img" src={whatsapp} alt="socilas"/>Whats App</span>
+
+                            <input className="label-check" type="checkbox"/>
+                            <span className="label-check__text"><img  className="label-check__img" src={whatsapp} alt="socilas"/>Whats App</span>
                         </label>
                         <label className="label">
-                            <input className="label-check" type="checkbox"/><span className="label-check__text"><img
-                            className="label-check__img" src={telega} alt="socilas"/>Telegram</span>
+
+                            <input className="label-check" type="checkbox"/>
+                            <span className="label-check__text"><img className="label-check__img" src={telega} alt="socilas"/>Telegram</span>
                         </label>
                         <label className="label">
-                            <input className="label-check" type="checkbox"/><span className="label-check__text"><img
-                            className="label-check__img" src={viber} alt="socilas"/>Viber</span>
+
+                            <input className="label-check" type="checkbox"/>
+                            <span className="label-check__text"><img className="label-check__img" src={viber} alt="socilas"/>Viber</span>
                         </label>
                     </div>
                     <input className="cooperate-connection__form_button" type="button"

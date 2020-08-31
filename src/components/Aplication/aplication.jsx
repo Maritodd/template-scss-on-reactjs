@@ -25,7 +25,7 @@ function Aplication(props) {
                 <Header />
                 <Service servicePage={props.store.servicePage}/>
                 <Roadmap/>
-                <Projects/>
+                <Projects projectPage={props.store.projectPage}/>
                 <Partner/>
                 <Meet meetPage={props.store.meetPage}/>
                 <Support/>

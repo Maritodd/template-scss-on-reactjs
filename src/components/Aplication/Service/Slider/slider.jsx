@@ -1,37 +1,41 @@
 import React, {Component} from 'react';
 import Slider from 'infinite-react-carousel';
-
+import ServiceContainer from "./serviceContainer";
+import ServiceDescription from "./serviceDescription";
+import {makeStyles} from "@material-ui/core/styles";
+import Portal from "@material-ui/core/Portal";
 
 
 class Carousel extends Component {
+
     render() {
         const settings = {
             adaptiveHeight: false,
             arrows: false,
-            arrowsBlock: true,
+            arrowsBlock: false,
             arrowsScroll: 2,
             autoplay: true,
             autoplaySpeed: 2500,
             centerPadding: 10,
             className: 'Carousel',
-            duration: 100,
+            duration: 200,
+            wheel: true,
+            wheelScroll: 1,
             initialSlide: 1,
             pauseOnHover: true,
-            slidesToShow: 5
+            slidesToShow: 7,
         };
+
+        let serviceElement = this.props.servicePage.services.map(s => <ServiceContainer id={s.id} photo={s.photo}
+                                                                                        service={s.service}/>)
+        // let serviceDescription = this.props.servicePage.services.map(s => <ServiceDescription id={s.id} service={s.service} subtheme={s.subtheme}/>)
+
         return (
-            <div >
+            <div>
                 <Slider {...settings} >
-                        <div className="service-allow__item">
-                            <div className="service-allow__item_container">
-                                <img className="service-allow__item_img" src={this.props.photo} alt="services"/>
-                                <span className="service-allow__item_text">{this.props.services}</span>
-                            </div>
-                            <div className="service-allow__item_open">
-                                <p>❯</p>
-                            </div>
-                    </div>
+                    {serviceElement}
                 </Slider>
+
             </div>
         );
     }
